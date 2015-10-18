@@ -13,5 +13,6 @@ class Gosgp < Formula
     system "GOPATH=/tmp/gopath go get -d"
     system "GOPATH=/tmp/gopath go build -o gosgp"
     bin.install "gosgp"
+    system "rm -rf /tmp/gopath"
   end
 end
