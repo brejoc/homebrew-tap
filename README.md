@@ -1,3 +1,5 @@
+**ATTENTION: Discontinued, since I no longer own a Mac.**
+
 # Homebrew Tap
 
 Tap this: `brew tap brejoc/tap`  
