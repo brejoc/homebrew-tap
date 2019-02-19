@@ -1,5 +1,11 @@
 require 'formula'
 
+GOPATH = ENV.fetch("HOMEBREW_TEST_TMPDIR") do |k|
+  dir = Dir.mktmpdir("homebrew-tests-", ENV["HOMEBREW_TEMP"] || "/tmp")
+  at_exit { FileUtils.remove_entry(dir) }
+  ENV[k] = dir
+end
+
 class Gosgp < Formula
   homepage 'https://github.com/brejoc/gosgp'
   url 'https://github.com/brejoc/gosgp/archive/0.1.tar.gz'
@@ -10,9 +16,8 @@ class Gosgp < Formula
   depends_on "golang" => :build
 
   def install
-    system "GOPATH=/tmp/gopath go get -d"
-    system "GOPATH=/tmp/gopath go build -o gosgp"
+    system "GOPATH=#{GOPATH} go get -d"
+    system "GOPATH=#{GOPATH} go build -o gosgp"
     bin.install "gosgp"
-    system "rm -rf /tmp/gopath"
   end
 end
