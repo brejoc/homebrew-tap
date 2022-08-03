@@ -10,8 +10,6 @@ class Gosgp < Formula
   depends_on "golang" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    system "go get -d"
     system "go build -o gosgp"
     bin.install "gosgp"
   end
