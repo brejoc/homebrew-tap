@@ -8,10 +8,10 @@ end
 
 class Stockuploader < Formula
   homepage 'https://github.com/brejoc/stockuploader'
-  url 'https://github.com/brejoc/stockuploader/archive/0.1.tar.gz'
-  sha256 'fe31a05af3255a5d8808282e49762245895e85c21e3ad561d7e78bd17c2edceb'
+  url 'https://github.com/brejoc/stockuploader/archive/0.2.tar.gz'
+  sha256 '97c54af083f180b55b739b5e7d0cc2fd1ebf1e03897c70d5df70db039556f8d3'
 
-  head 'https://github.com/brejoc/stockuploader.git', :revision => 'f2e391f5267ae1194c4ffd699a5300df0089db03'
+  head 'https://github.com/brejoc/stockuploader.git', :revision => '19177f4db4eb5a9ab92142242040e095e480dbe4'
 
   depends_on "golang" => :build
 
