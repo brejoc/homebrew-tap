@@ -4,7 +4,11 @@ VERSION="0.1"
 
 GOPATH = ENV.fetch("HOMEBREW_TEST_TMPDIR") do |k|
   dir = Dir.mktmpdir("homebrew-tests-", ENV["HOMEBREW_TEMP"] || "/tmp")
-  at_exit { FileUtils.remove_entry(dir) }
+  at_exit do
+    # Ensure all files are writable before removing the directory
+    FileUtils.chmod_R('u+rwx', dir)
+    FileUtils.remove_entry(dir)
+  end
   ENV[k] = dir
 end
 
