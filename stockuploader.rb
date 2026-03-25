@@ -1,6 +1,6 @@
 require 'formula'
 
-VERSION="0.2"
+VERSION="0.3"
 
 GOPATH = ENV.fetch("HOMEBREW_TEST_TMPDIR") do |k|
   dir = Dir.mktmpdir("homebrew-tests-", ENV["HOMEBREW_TEMP"] || "/tmp")
@@ -11,7 +11,7 @@ end
 class Stockuploader < Formula
   homepage 'https://github.com/brejoc/stockuploader'
   url "https://github.com/brejoc/stockuploader/archive/#{VERSION}.tar.gz"
-  sha256 '97c54af083f180b55b739b5e7d0cc2fd1ebf1e03897c70d5df70db039556f8d3'
+  sha256 'c3668d6d4a94e3462365ef07f09511157cbef25458289f90ff6a9f267a88de3e'
 
   head do
     url 'https://github.com/brejoc/stockuploader.git', :branch => 'main'
